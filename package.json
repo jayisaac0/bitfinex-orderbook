@@ -1,0 +1,26 @@
+{
+  "name": "bitfinex-orderbook",
+  "version": "1.0.0",
+  "description": "Simplified distributed instance",
+  "scripts": {
+    "build": "lerna exec --stream --concurrency 9999 npm install",
+    "rebuild": "npm run clear && lerna exec --stream --concurrency 9999 npm install",
+    "start": "lerna run --stream --concurrency 9999 --sort start",
+    "clear": "find . -maxdepth 2 -mindepth 2 -name 'node_modules' -type d -prune -exec rm -rf '{}' +;find . -name 'package-lock.json' -type f -prune -exec rm -rf '{}' +;"
+  },
+  "keywords": [
+    "orderbook"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },  
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=14.0.0 <=18"
+  },  
+  "author": "Joshua Isaac",
+  "license": "ISC"
+}
